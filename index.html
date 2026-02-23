@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Official Fan Club of Apur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f8ffaf;
+      color: #333;
+      text-align:center;
+    }
+    h1, h2 {
+      font-family: 'Luckiest Guy', cursive;
+    }
+    .hero {
+      padding: 40px 20px;
+      background: linear-gradient(120deg,#ffd166,#5ce1e6);
+    }
+    .hero img {
+      width:180px;height:180px;
+      border-radius:50%;
+      border:8px solid #fff;
+      object-fit:cover;
+      box-shadow:0 10px 25px rgba(0,0,0,.2);
+    }
+    main {
+      max-width:700px;
+      margin:25px auto;
+      background:#fffced;
+      border-radius:25px;
+      padding:25px;
+      box-shadow:0 8px 20px rgba(0,0,0,.1);
+    }
+    section {margin-bottom:25px;}
+    ul {text-align:left;}
+    .upload {
+      margin-top:15px;
+      font-size:14px;
+    }
+    .btn {
+      margin-top:20px;
+      padding:15px 25px;
+      border:none;
+      border-radius:30px;
+      font-family:'Luckiest Guy';
+      background:linear-gradient(90deg,#fd6f96,#ffe156,#5ce1e6);
+      cursor:pointer;
+    }
+    .popup {
+      display:none;
+      position:fixed;
+      top:0;left:0;right:0;bottom:0;
+      background:rgba(0,0,0,.5);
+      justify-content:center;
+      align-items:center;
+    }
+    .popup-content {
+      background:white;
+      padding:25px;
+      border-radius:20px;
+      font-family:'Luckiest Guy';
+      color:#fd6f96;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="hero">
+  <img id="profilePic" src="apur.jpg" alt="Upload Photo">
+  <h1>Official Fan Club of Apur</h1>
+  <p><b>World’s Most Legendary Human (Self-Proclaimed)</b></p>
+
+  <!-- Upload Control -->
+  <div class="upload">
+    Upload Apur Photo:
+    <input type="file" id="uploadPhoto" accept="image/*">
+  </div>
+</div>
+
+<main>
+
+<section>
+<h2>🎮 Gaming Identity</h2>
+<p>
+Professional <b>Free Fire MAX</b> player known as <b>OneAboveAll</b>.
+Believes every match is “last match”… it never is.
+</p>
+</section>
+
+<section>
+<h2>🏆 Achievements</h2>
+<ul>
+<li>Gold Medal in Overthinking</li>
+<li>Champion of Last-Minute Work</li>
+<li>Honorary Citizen of Madurai (Emotionally)</li>
+</ul>
+</section>
+
+<section>
+<h2>🍽️ Food Devotion</h2>
+<p>Favourite Food: <b>Madurai Parotta</b></p>
+<p>Emotional State After Eating: Sleep Mode Activated</p>
+</section>
+
+<section>
+<h2>🕰️ Daily Schedule</h2>
+<ul>
+<li>Wake up → Check phone</li>
+<li>Play Free Fire</li>
+<li>Think about Madurai</li>
+<li>Eat (wish it was parotta)</li>
+<li>Say “I’ll start work now” at 2AM</li>
+</ul>
+</section>
+
+<button class="btn" onclick="showPopup()">If Apur is late again, click here</button>
+
+</main>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    Relax.<br>
+    He is either playing Free Fire<br>
+    or thinking about Madurai.
+    <br><br>
+    <button onclick="hidePopup()">OK</button>
+  </div>
+</div>
+
+<script>
+/* Photo Upload Feature */
+document.getElementById("uploadPhoto").addEventListener("change", function(event){
+    const file = event.target.files[0];
+    if(file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+            document.getElementById("profilePic").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+/* Popup */
+function showPopup(){
+  document.getElementById("popup").style.display="flex";
+}
+function hidePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
