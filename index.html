@@ -72,15 +72,11 @@
 <body>
 
 <div class="hero">
-  <img id="profilePic" src="apur.jpg" alt="Upload Photo">
+  <img src="apur.jpeg" alt="Apur">
   <h1>Official Fan Club of Apur</h1>
   <p><b>World’s Most Legendary Human (Self-Proclaimed)</b></p>
 
-  <!-- Upload Control -->
-  <div class="upload">
-    Upload Apur Photo:
-    <input type="file" id="uploadPhoto" accept="image/*">
-  </div>
+
 </div>
 
 <main>
@@ -135,16 +131,6 @@ Believes every match is “last match”… it never is.
 
 <script>
 /* Photo Upload Feature */
-document.getElementById("uploadPhoto").addEventListener("change", function(event){
-    const file = event.target.files[0];
-    if(file){
-        const reader = new FileReader();
-        reader.onload = function(e){
-            document.getElementById("profilePic").src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    }
-});
 
 /* Popup */
 function showPopup(){
@@ -156,4 +142,5 @@ function hidePopup(){
 </script>
 
 </body>
+
 </html>
